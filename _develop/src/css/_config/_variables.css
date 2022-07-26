@@ -1,0 +1,21 @@
+/* 変数置き場にしましょう。 */
+$col_white: #fff;
+
+$col_text: #000;
+$col_text-gray: #c5c5c5;
+$col_error: #e5173a;
+$col_link: #b5b5b5;
+
+
+$col_news-border-gray: #e0e0e0;
+$col_company-border-gray: #cbcbcb;
+
+
+$z_loading: 10000;
+$z_header: 1000;
+$z_over: 10;
+$z_flat: 0;
+$z_under: -10;
+
+$cubic: cubic-bezier(.4,0,.2,1.09);
+

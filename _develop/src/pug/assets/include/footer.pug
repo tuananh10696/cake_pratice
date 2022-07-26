@@ -1,0 +1,29 @@
+include ../../utils/_variable.pug
+include ../../utils/_mixin.pug
+
+block append mixin
+  mixin footerItem(link, textImg, alt, target_blank = true)
+    li.footer__nav-item
+      if target_blank
+        a(href=link).footer__nav-link.link__text
+          .txt-img-wrap
+            +img(textImg, alt)
+      else
+        a(href=link).footer__nav-link.link__text
+          .txt-img-wrap
+            +img(textImg, alt)
+
+footer.footer
+  .footer__inner
+    .footer__go-top-top
+      a(href="#root").go-to-top
+        i.glyphs-icon_arrow-t
+    ul.footer__nav-list
+      +footerItem('/privacy/', 'images/text/footer_privacy-policy.svg', 'Privacy Policy')
+      +footerItem('/sitepolicy/', 'images/text/footer_site-policy.svg', 'Site Policy')
+      +footerItem('/contact/', 'images/text/footer_contact.svg', 'Contact')
+    .footer__logo
+      +img('images/common/logo.svg','BLOCKSMITH&Co.')
+    small.footer__copyright
+      span.txt-img-wrap
+        +img('images/text/footer_copyright.svg','Copyrignt(c) BLOCKSMITH&Co.')

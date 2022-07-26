@@ -1,0 +1,53 @@
+@media (--tb) {
+  .contact {
+    width: 100%;
+    height: auto;
+    padding: 0 0 vwTb(144);
+  }
+  .contact__lead {
+    font-size: vwTb(16);
+    padding: 0 0 vwTb(48);
+  }
+  .contact__complete {
+    text-align: center;
+    .ttl {
+      font-size: vwTb(32);
+      padding-bottom: 1.5em;
+    }
+    .btn-wrap {
+      display: flex;
+      justify-content: center;
+      padding: vwTb(40) 0 0;
+    }
+    .btn {
+      width: vwTb(324);
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #e5e5e5;
+      padding: 1.0em 0;
+      border-radius: vwTb(100);
+      font-size: vwTb(16);
+      position: relative;
+      cursor: pointer;
+      transition: background-color .3s ease;
+      &:hover {
+        background-color: #e5e5e5;
+      }
+      /* .icon-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: vwTb(22);
+      }
+      &--back {
+        .icon-arrow {
+          right: auto;
+          left: vwTb(22);
+          transform: translateY(-50%) scaleX(-1);
+        }
+      } */
+    }
+  }
+}

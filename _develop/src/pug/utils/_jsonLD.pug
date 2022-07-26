@@ -1,0 +1,154 @@
+//- 【1】 パンくず ===============================================================
+  各ページでこうやって指定するとJSON-LDがいい感じに入る。指定が無ければ何も入らない。
+  useCanonicalがtrueだと自動でcanonicalが生成される。
+
+
+  block jsonLD
+    -
+      const useCanonical = false;
+      const jsonLD = [
+        {name: 'HOME', path: '/'},
+        {name: 'ABOUT', path: '/about/'},
+        {name: 'ABOUT-TEST', path: '/about/test/'},
+      ];
+
+
+
+
+//- 【2】 サイトの情報 =============================================================
+  ここはサイト全体で共通なので、使う場合ここで設定する。大変な場合それぞれ空でも可
+
+  ★ 2-1) 組織情報。
+    https://technicalseo.com/tools/schema-markup-generator/
+    ここのOrganizationで作成し出てきたスキーマを貼るよろしね。
+    <script type="application/ld+json"></script>を下に。
+
+-
+  const Organization = ``;
+
+
+
+//-
+  ★ 2-2) ローカルビジネス。クライアントがお店の場合ここを書いてあげると検索結果が凄く便利になる。
+  https://mamewaza.com/tools/schema.html で生成出来る。
+  <script type="application/ld+json"></script>を下に。
+
+-
+  const LocalBusiness = ``;
+
+
+//-
+  ★ 2-3) その他。色々種類があるので入れたければ調べて作成し適当に改造して下さい。
+  FAQやArticleまで対応するのは追加見積もり発生するかもしれない。
+  個別に<script type="application/ld+json"></script>を張りたい場合は各ページで、
+
+  block append richResults
+
+  で追加できるようにしてあります(_base.pug参照)
+  FAQなど。
+
+
+
+//-
+  ★ 2-4) FAQの例
+  block append richResults
+    .
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "質問質問質問質問質問質問",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "答え答え答え<br>, <strong>等インライン装飾は使える"
+            }
+          }
+        ]
+      }
+      </script>
+
+  ★★★ JSONなので配列の最後のアイテムのカンマはあるとだめ。★★★
+  jsonValidatorに通してみたりリッチリザルトテストで確認してみると良い。
+
+
+
+//- 【0】リッチリザルトテスト ======================================================
+  https://search.google.com/test/rich-results?hl=ja
+
+  リッチリザルトギャラリー
+  https://gyazo.com/e7d80386c1fc0281cfeb817cd9de58a2
+
+  【もはや必須Lvか？】====================================
+  ・パンくず
+  ・ロゴ
+  ・FAQ
+
+  【お店の場合あると非常に良い】==========================
+  ・ローカルビジネス
+
+  【あるといいかも】====================================
+  ・Article（ニュース等の記事詳細ページに）
+  ・ハウツー（ステップで何かを説明してるページに）
+  ・Product（そのページが特定の商品である場合）
+  ・サイトリンク検索ボックス（そのwebに検索機能がある場合）
+
+
+
+
+
+//- 以下編集しなくて平気 =============================================================
+block jsonLD
+  -
+    const useCanonical = false;
+    const jsonLD = [];
+
+-
+  const createLDScheme = (options) => {
+    let resultArray = [];
+    let index = 1;
+    for(const elem of options) {
+      resultArray.push(`{
+            "@type": "ListItem",
+            "position": ${ resultArray.length + 1 },
+            "item": {
+              "@id": "${ url.replace(/\/{1}$/, '') }${elem.path}",
+              "name": "${ elem.name }"
+            }
+          }`);
+    }
+    return resultArray.join(',');
+  }
+
+  const createCanonical = (options) => {
+    let uri = url;
+    let targetUri = options[options.length-1].path;
+    uri += targetUri.substring(1, targetUri.length);
+    return uri;
+  }
+
+
+  const createLD = (options) => {
+    if (!options.length) return '';
+
+    let ldHTML = '';
+
+    if (useCanonical) {
+      ldHTML += `    <link rel="canonical" href="${ createCanonical(options) }">`;
+    }
+
+    ldHTML += `
+      ${ Organization }
+      ${ LocalBusiness }
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org/",
+          "@type": "BreadcrumbList",
+          "itemListElement": [${ createLDScheme(options) }]
+        }
+      </script>
+    `
+    return ldHTML;
+  }

@@ -1,0 +1,189 @@
+@media (--sp) {
+  .form {
+    width: 100%;
+    height: auto;
+  }
+  .form__row {
+    + .form__row {
+      margin-top: vw(40);
+    }
+  }
+  .form__label {
+    padding: 0 0 vw(24);
+    display: flex;
+    align-items: center;
+    .required {
+      font-size: vw(20);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #eaeaea;
+      padding: vw(6) vw(16);
+      border-radius: vw(5);
+      margin-left: vw(24);
+    }
+  }
+  .form__body {
+    .error-txt {
+      display: block;
+      padding: vw(8) 0 0;
+      color: $col_error;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      height: auto;
+      border: 1px solid #e9e9e9;
+      border-radius: vw(5);
+      padding: vw(12) vw(24);
+      font-size: max(vw(26), 16px);
+      &.error {
+        background-color: #fbe6e6;
+      }
+    }
+    input[type="radio"] {
+      display: none;
+      &:checked + label {
+        &:after {
+          opacity: 1;
+        }
+      }
+      + label {
+        display: block;
+        position: relative;
+        padding: vw(6) 0 vw(6) vw(48);
+        cursor: pointer;
+        a {
+          text-decoration: underline;
+        }
+        &:before,
+        &:after {
+          box-sizing: border-box;
+          display: block;
+          content: '';
+          width: vw(32);
+          height: vw(32);
+          border-radius: 50%;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          left: 0;
+        }
+        &:before {
+          border: 1px solid #e9e9e9;
+        }
+        &:after {
+          background-color: currentColor;
+          transform-origin: center;
+          transform: scale(0.5, 0.5);
+          transition: opacity .2s ease;
+          opacity: 0;
+        }
+      }
+      &.error {
+        + label {
+          &:before {
+            background-color: #fbe6e6;
+          }
+        }
+      }
+    }
+  }
+  .form__privacy-wrap {
+    padding: vw(64) 0 vw(80);
+    display: flex;
+    justify-content: center;
+  }
+  .form__privacy {
+    input[type="checkbox"] {
+      display: none;
+      &:checked + label {
+        &:after {
+          opacity: 1;
+        }
+      }
+      + label {
+        width: auto;
+        font-size: vw(26);
+        position: relative;
+        padding: 0 0 0 vw(56);
+        cursor: pointer;
+        a {
+          text-decoration: underline;
+        }
+        &:before,
+        &:after {
+          box-sizing: border-box;
+          display: block;
+          content: '';
+          width: vw(40);
+          height: vw(40);
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        &:before {
+          background-color: #fff;
+          border: 1px solid #e9e9e9;
+        }
+        &:after {
+          background-color: currentColor;
+          transform: scale(0.5, 0.5);
+          opacity: 0;
+          transition: opacity .2s ease;
+        }
+      }
+      &.error {
+        + label {
+          &:before {
+            background-color: #fbe6e6;
+          }
+        }
+      }
+    }
+    .error-txt {
+      display: block;
+      text-align: center;
+      padding: vw(8) 0 0;
+      color: $col_error;
+    }
+  }
+  .form__submit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .btn {
+      width: vw(560);
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #e5e5e5;
+      padding: 1.0em 0;
+      border-radius: vw(100);
+      position: relative;
+      font-weight: 400;
+      font-size: vw(26);
+      cursor: pointer;
+      &:not(:last-child) {
+        margin-bottom: vw(40);
+      }
+      .icon-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: vw(22);
+      }
+      &--back {
+        .icon-arrow {
+          right: auto;
+          left: vw(22);
+          transform: translateY(-50%) scaleX(-1);
+        }
+      }
+    }
+  }
+}

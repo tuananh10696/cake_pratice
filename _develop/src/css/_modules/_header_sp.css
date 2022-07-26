@@ -1,0 +1,109 @@
+@media (--sp) {
+  .header {
+    --hei-header: vw(112);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--hei-header);
+    z-index: $z_header;
+    &.open {
+      .header__menu-btn {
+        .bar {
+          &:nth-child(2) {
+            transform: translateY(vw(-6));
+          }
+        }
+      }
+      .header__nav {
+        width: 100%;
+        pointer-events: auto;
+      }
+      .header__nav-inner {
+        transition: opacity .3s .2s linear;
+        opacity: 1;
+      }
+    }
+  }
+  .header__inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  .header__logo {
+    position: relative;
+    z-index: $z_over;
+    a {
+      display: block;
+      width: vw(377);
+      height: auto;
+    }
+  }
+  .header__menu-btn {
+    width: var(--hei-header);
+    height: var(--hei-header);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: $z_over;
+    .bar {
+      display: block;
+      width: vw(50);
+      height: vw(3);
+      background-color: $col_text;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      &:nth-child(1) {
+        transform: translateY(vw(-6));
+      }
+      &:nth-child(2) {
+        transition: transform .1s .3s ease;
+        transform-origin: right;
+        transform: translateY(vw(6)) scaleX(.6);
+      }
+    }
+  }
+  .header__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: vh(100, fix);
+    transition: width .3s ease-in-out;
+    overflow: hidden;
+    background: linear-gradient(to right, #eee 0%, transparent 100%);
+    pointer-events: none;
+  }
+  .header__nav-inner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    padding: var(--hei-header) 0 0;
+    opacity: 0;
+    transition: opacity .2s 0s linear;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .header__nav-list {
+    width: 100%;
+    height: 100%;
+    padding: vw(80) vw(40);
+    display: flex;
+    flex-direction: column;
+    gap: vw(80);
+    overflow-y: scroll;
+  }
+  .header__nav-link {
+    display: block;
+    .txt-img-wrap {
+      height: vw(48);
+    }
+  }
+}

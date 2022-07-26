@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+@import './_config/_variables.css';
+@import './_config/_mixin.css';
+@import './_config/_media.css';
+
+@import './_modules/_loading_pc.css';
+@import './_modules/_loading_tb.css';
+@import './_modules/_loading_sp.css';
+
+@import './_pages/_index/_index_pc.css';
+@import './_pages/_index/_index_tb.css';
+@import './_pages/_index/_index_sp.css';
+
+@import './_pages/_index/_animation_pc.css';
+@import './_pages/_index/_animation_tb.css';
+@import './_pages/_index/_animation_sp.css';

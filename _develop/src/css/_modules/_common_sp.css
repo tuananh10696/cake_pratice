@@ -1,0 +1,101 @@
+@media (--sp) {
+  body {
+    font-size: vw(26);
+    line-height: 1.5;
+    letter-spacing: .01em;
+  }
+  .show_pc {
+    display: none !important;
+  }
+  .txt-img-wrap {
+    img {
+      display: block;
+      width: auto;
+      height: 100%;
+    }
+  }
+  .cmn__inner {
+    width: 100%;
+    padding: 0 vw(40);
+  }
+  .cmn__lower-inner {
+    width: 100%;
+    padding: 0 vw(40);
+  }
+  .cmn__ttl {
+    padding-bottom: vw(40);
+    .txt-img-wrap {
+      display: inline-block;
+      width: auto;
+      height: vw(58);
+      padding-bottom: vw(12);
+      border-bottom: vw(3) solid currentColor;
+    }
+  }
+  .cmn__catch {
+    font-size: vw(36);
+    padding: 0 0 vw(24);
+    line-height: 1.7;
+  }
+  .cmn__lower-head {
+    width: 100%;
+    height: auto;
+    padding: vw(232) 0 vw(96);
+    .lower-head__ttl {
+      .txt-img-wrap {
+        --hei-text: vw(40);
+        --padding-bottom: vw(12);
+        display: block;
+        width: max-content;
+        height: calc(var(--hei-text) + var(--padding-bottom) + vw(3));
+        margin: auto;
+        padding: 0 0 var(--padding-bottom);
+        border-bottom: vw(3) solid currentColor;
+      }
+    }
+  }
+  .cmn__link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    .icon-arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: vw(62);
+      height: vw(62);
+      background-color: $col_text;
+      color: $col_white;
+      font-size: vw(24);
+      border-radius: 50%;
+      margin-right: vw(24);
+      margin-bottom: vw(-4);
+    }
+  }
+  .cmn__news-item {
+    width: 100%;
+    height: auto;
+    a {
+      display: block;
+      width: 100%;
+      padding: 0.7em 0 1.5em;
+    }
+    &:not(:last-child) {
+      border-bottom: 1px solid $col_news-border-gray;
+    }
+    .date {
+      display: block;
+      padding: 0 0 vw(12);
+      font-weight: 700;
+    }
+    .label {
+      letter-spacing: .01em;
+    }
+    .icon-blank {
+      color: $col_text-gray;
+      font-size: vw(20);
+      margin-left: vw(16);
+      vertical-align: vw(-2);
+    }
+  }
+}

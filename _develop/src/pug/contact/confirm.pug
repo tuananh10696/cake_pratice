@@ -1,0 +1,51 @@
+extends ../utils/_base.pug
+
+block append stylesheet
+  //- assetPathで自動でサブディレクトリ対応の/assets/のパスが出るようにしてあります。
+  link(rel="stylesheet", href=assetPath + 'css/form.css')
+  link(rel="stylesheet", href=assetPath + 'css/contact.css')
+
+block subTitle
+  - var pageTitle = 'お問い合わせ';
+
+block main
+  +lowerHead('images/text/contact.svg', 'CONTACT')
+  .contact
+    .contact__inner.cmn__lower-inner
+      p.contact__lead
+        | ご意見、お問合せにつきましては、下記入力フォームにご記載の上、送信ボタンをクリックしてください。
+      form(action="./complete.html").contact__form.form.form--confirm
+        .form__row
+          p.form__label お名前
+            span.required 必須
+          .form__body
+            p 田中　太郎
+        .form__row
+          p.form__label メールアドレス
+            span.required 必須
+          .form__body
+            p tanakanomail@caters.co.jp
+        .form__row
+          p.form__label お問い合わせ種別
+            span.required 必須
+          .form__body.form__body--radio
+            p 当社に関するお問い合わせ
+            //- input(type="radio", name="category", id="category01")
+            //- label(for="category01") 当社に関するお問い合わせ
+            //- input(type="radio", name="category", id="category02")
+            //- label(for="category02") 取材に関するお問い合わせ
+            //- input(type="radio", name="category", id="category03")
+            //- label(for="category03") 採用に関するお問い合わせ
+        .form__row
+          p.form__label お問い合わせ内容
+            span.required 必須
+          .form__body
+            p お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。
+        .form__privacy-wrap
+          .form__privacy
+            p プライバシーポリシーに同意する
+        .form__submit
+          button(type="button" onclick="window.history.back();").btn.btn--back 前のページに戻る
+            i.glyphs-icon_arrow-r.icon-arrow
+          button(type="submit").btn 内容を確認して送信
+            i.glyphs-icon_arrow-r.icon-arrow

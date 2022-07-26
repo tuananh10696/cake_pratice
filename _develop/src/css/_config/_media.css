@@ -1,0 +1,30 @@
+@custom-media --pc (min-width: 1240px), print;
+@custom-media --tb (min-width: 768px) and (max-width: 1239px);
+@custom-media --sp only screen and (max-width: 767px);
+
+/*
+【1】=======================================================================
+基本
+@custom-media --pc (min-width: 769px), print;
+@custom-media --sp only screen and (max-width: 768px);
+*/
+
+/*
+【2】=======================================================================
+【SP縦横 : タブレット : PC】
+@custom-media --pc (min-width: 1367px), print;
+@custom-media --tb (min-width: 768px) and (max-width: 1366px);
+@custom-media --sp only screen and (max-width: 767px);
+*/
+
+/*
+【3】=======================================================================
+【SP縦 ＆ それ以外版。SP横でSP縦デザイン見せるメリットってあまりない。】
+どちらかというと【2】よりこっちが良い。これを使う場合は、devicewatcher.tsを調整して下さい。
+
+@custom-media --pc (min-width: 1367px), print;
+@custom-media --tb only screen and (min-width: 479px) and (max-width: 1366px);
+@custom-media --sp only screen and (max-width: 478px);
+*/
+
+/* anyIdeas? 何かあれば更新するので一声。 */

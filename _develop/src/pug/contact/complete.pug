@@ -1,0 +1,21 @@
+extends ../utils/_base.pug
+
+block append stylesheet
+  //- assetPathで自動でサブディレクトリ対応の/assets/のパスが出るようにしてあります。
+  link(rel="stylesheet", href=assetPath + 'css/form.css')
+  link(rel="stylesheet", href=assetPath + 'css/contact.css')
+
+block subTitle
+  - var pageTitle = 'お問い合わせ';
+
+block main
+  +lowerHead('images/text/contact.svg', 'CONTACT')
+  .contact
+    .contact__inner.cmn__lower-inner
+      .contact__complete
+        h3.ttl お問い合わせが完了しました。
+        p.txt お問い合わせいただきありがとうございました。
+          br.show_sp
+          | 後日、担当者から連絡申し上げます。
+        .btn-wrap
+          a(href="/").btn トップページに戻る

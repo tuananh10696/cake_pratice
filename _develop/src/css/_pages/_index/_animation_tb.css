@@ -1,0 +1,54 @@
+@media (--tb) {
+  .intersect-elem {
+    &.mv {
+      .mv__catch {
+        .en {
+          opacity: 0;
+          transition: opacity .8s $cubic, transform .8s $cubic;
+          transform: translateY(vwTb(50));
+        }
+        .ja {
+          opacity: 0;
+          transition: opacity .8s $cubic, transform .8s $cubic;
+          transform: translateY(vwTb(50));
+          transition-delay: .3s;
+        }
+      }
+      .mv__visual {
+        transition: filter 1.2s .3s cubic-bezier(.32,.19,0,1.01);
+        filter: contrast(200%);
+        img {
+          transform: scale(1.8);
+          transition: transform 1.2s .3s ease;
+        }
+      }
+      &.active {
+        .mv__catch {
+          .en {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          .ja {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .mv__visual {
+          filter: contrast(100%);
+          img {
+            transform: scale(1.0);
+          }
+        }
+      }
+    }
+    &[data-effect="fadeup"] {
+      opacity: 0;
+      transform: translateY(vwTb(40));
+      transition: opacity .8s $cubic, transform .8s $cubic;
+      &.active {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+  }
+}

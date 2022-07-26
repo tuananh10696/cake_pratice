@@ -1,0 +1,100 @@
+extends ./utils/_base.pug
+
+block append stylesheet
+  //- assetPathで自動でサブディレクトリ対応の/assets/のパスが出るようにしてあります。
+  link(rel="stylesheet", href=assetPath + 'css/index.css')
+
+block append mixin
+  mixin companyItem(label, data)
+    .company__row.intersect-elem(data-effect="fadeup")
+      dt.company__label !{label}
+      dd.company__data !{data}
+
+  mixin sectionTtl(section, textImg)
+    h2.cmn__ttl(class=section+'__ttl').intersect-elem(data-effect="fadeup")
+      span.txt-img-wrap
+        +img(textImg, section)
+
+block main
+  h1.top__h1 株式会社BLCKSMITH&amp;Co.
+  .mv.intersect-elem
+    .mv__visual
+      +pic('images/top/mv_bg_pc.jpg','images/top/mv_bg_sp.jpg')
+    .mv__inner
+      p.mv__catch
+        span.en
+          +pic('images/text/mv_catch_pc.svg', 'images/text/mv_catch_sp.svg', 'Creating an exciting future')
+        span.ja
+          | ワクワクする未来を創る
+  section.news#news
+    .news__inner.cmn__inner
+      +sectionTtl('news', 'images/text/news.svg')
+      ul.news__list
+        //- li.cmn__news-item.intersect-elem(data-effect="fadeup", class=`${clamp ? 'cmn__news-item--clamp' : ''}`)
+        //-   a(href=link)
+        //-     time(datetime=datetime).date !{dateLabel}
+        //-     p.label !{label}
+        +newsItem('/news/detail.html', '2022-07-06', '2022 7/6', 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。', true)
+        +newsItem('https://www.klab.com/jp/press/release/2022/0706/blocksmithco_learn_to_earn.html', '2022-07-06', '2022 7/6', '株式会社BLOCKSMITH&Co.がブロックチェーンゲームの最新型「学んで稼げる Learn to Earn」を発表〜今秋にプレセールを実施〜', true)
+        +newsItem('https://www.klab.com/jp/press/release/2022/0426/klabblocksmithcothirdverseweb3.html', '2022-04-26', '2022 4/26', 'KLabの戦略子会社BLOCKSMITH&Co.が、ThirdverseグループとWeb3及びブロックチェーンゲームの開発・運営に関する基本合意契約を締結', true)
+        +newsItem('https://www.klab.com/jp/press/release/2022/0324/blocksmithco.html', '2022-03-24', '2022 3/24', 'ブロックチェーン関連事業子会社「株式会社BLOCKSMITH&Co.」設立のお知らせ', true)
+      .news__link-area.intersect-elem(data-effect="fadeup")
+        a(href="/news/").news__link.cmn__link
+          span.icon-arrow
+            i.glyphs-icon_arrow-r
+          | 一覧を見る
+  //- section.message#message
+    .message__inner.cmn__inner
+      +sectionTtl('message', 'images/text/message.svg')
+      p.message__catch.cmn__catch 新しいGameFiモデルの創出に挑戦します
+      p.message__txt テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+      p.message__txt テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+  .company-name.js-movingText.intersect-elem(data-effect="fadeup")
+    .txt-img-wrap
+      +img('images/top/logo-text-only.svg','')
+  section.service#service
+    .service__inner.cmn__inner
+      +sectionTtl('service', 'images/text/service.svg')
+      .service__row
+        .service__img-wrap.intersect-elem(data-effect="fadeup", data-delay="0.4")
+          +img('images/top/service_01.png','')
+        .service__txt-wrap
+          p.service__catch.cmn__catch.intersect-elem(data-effect="fadeup") Quizo.ooo
+          p.service__txt.intersect-elem(data-effect="fadeup") 『Quizo.ooo』は、Quizを解くことにより知識を得ながら報酬を獲得できる、学んで稼げるLearn to Earnサービスです。
+            br
+            br
+            | ＊リリースまでお楽しみにお待ちください。最新情報は公式ツイッターにて配信して参りますので、ご興味のある方はフォローをお願いします。
+            a(href="https://twitter.com/Quizo_ooo", target='_blank', rel='noopener').link__alpha
+              i.glyphs-icon_tw.icon-twitter
+      //- .service__row.service__row--rev
+        .service__img-wrap
+          +img('images/top/service_01.jpg','')
+        .service__txt-wrap
+          p.service__catch.cmn__catch コピーが入ります。コピーが入ります。
+          p.service__txt テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+  section.recruit#recruit
+    .recruit__inner.cmn__inner
+      +sectionTtl('recruit', 'images/text/recruit.svg')
+      p.recruit__catch.cmn__catch.intersect-elem(data-effect="fadeup")
+        +img('images/top/logo-text-only.svg', 'BlockSmith＆Co.').txt-img
+        | では、私たちと新しいGameFiを
+        br.show_pc
+        | 開拓していく仲間を募集してます。
+      .recruit__link-area.intersect-elem(data-effect="fadeup")
+        a(href="https://recruit.jobcan.jp/blocksmith/", target='_blank', rel='noopener').recruit__link.cmn__link
+          span.icon-arrow
+            i.glyphs-icon_arrow-r
+          | キャリア採用/募集要項・エントリー
+  section.company#company
+    .company__inner.cmn__inner
+      +sectionTtl('company', 'images/text/company.svg')
+      dl.company__details
+        //- .company__row
+        //-   dt.company__label !{label}
+        //-   dd.company__data !{data}
+        +companyItem('社名', '株式会社BLOCKSMITH&Co. （ブロックスミスアンドコー）')
+        +companyItem('代表者', '代表取締役社長CEO 真田哲弥')
+        +companyItem('設立', '2022年4月1日')
+        +companyItem('資本金', '1000万円')
+        +companyItem('本社所在地', '〒106-6122 東京都港区六本木6-10-1六本木ヒルズ森タワー')
+        +companyItem('事業内容', 'ブロックチェーン技術または暗号資産、NFTを活用したゲームなどのサービスの開発および配信')
