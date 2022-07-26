@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: localhost:8889
--- 生成日時: 2022 年 6 月 07 日 08:52
+-- 生成日時: 2022 年 7 月 20 日 06:36
 -- サーバのバージョン： 5.7.34
 -- PHP のバージョン: 7.4.21
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- データベース: `testdb`
+-- データベース: `blocksmith`
 --
 
 -- --------------------------------------------------------
@@ -151,6 +151,23 @@ CREATE TABLE `infos` (
   `relation_info_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- テーブルのデータのダンプ `infos`
+--
+
+INSERT INTO `infos` (`id`, `created`, `modified`, `page_config_id`, `position`, `status`, `slug`, `title`, `notes`, `start_datetime`, `end_datetime`, `image`, `meta_description`, `meta_keywords`, `regist_user_id`, `category_id`, `index_type`, `multi_position`, `is_top`, `view_table_content`, `course_category_ids`, `relation_info_id`) VALUES
+(7, '2022-07-19 15:22:38', '2022-07-19 15:22:38', 1, 11, 'draft', '', 'Demo', '', '2022-07-19 00:00:00', NULL, '', '', '', 1, 0, '0', 0, 0, 0, '', 0),
+(8, '2022-07-19 15:31:56', '2022-07-19 15:33:13', 1, 10, 'publish', '', 'ブロックチェーン関連事業子会社「株式会社BLOCKSMITH&Co.」設立のお知らせ', '', '2022-07-19 00:00:00', NULL, '', '', '', 1, 0, '0', 0, 0, 0, '', 0),
+(9, '2022-07-20 12:47:27', '2022-07-20 14:05:28', 1, 9, 'publish', '', '<script>alert(123)</script>', '', '2022-07-19 00:00:00', NULL, '', '', '', 3, 0, '0', 0, 0, 0, '', 0),
+(10, '2022-07-20 14:05:36', '2022-07-20 14:05:36', 1, 8, 'draft', '', '1', '', '2022-07-20 00:00:00', NULL, '', '', '', 3, 0, '0', 0, 0, 0, '', 0),
+(11, '2022-07-20 14:05:41', '2022-07-20 14:05:41', 1, 7, 'draft', '', '2', '', '2022-07-20 00:00:00', NULL, '', '', '', 3, 0, '0', 0, 0, 0, '', 0),
+(12, '2022-07-20 14:06:55', '2022-07-20 14:06:55', 1, 6, 'draft', '', '5', '', '2022-07-20 00:00:00', NULL, '', '', '', 3, 0, '0', 0, 0, 0, '', 0),
+(13, '2022-07-20 14:07:01', '2022-07-20 14:07:01', 1, 5, 'draft', '', '6', '', '2022-07-20 00:00:00', NULL, '', '', '', 3, 0, '0', 0, 0, 0, '', 0),
+(14, '2022-07-20 14:10:56', '2022-07-20 14:10:56', 1, 4, 'draft', '', '7', '', '2022-07-20 00:00:00', NULL, '', '', '', 3, 0, '0', 0, 0, 0, '', 0),
+(15, '2022-07-20 14:11:01', '2022-07-20 14:11:01', 1, 3, 'draft', '', '8', '', '2022-07-20 00:00:00', NULL, '', '', '', 3, 0, '0', 0, 0, 0, '', 0),
+(16, '2022-07-20 14:11:06', '2022-07-20 14:11:06', 1, 2, 'draft', '', '9', '', '2022-07-20 00:00:00', NULL, '', '', '', 3, 0, '0', 0, 0, 0, '', 0),
+(17, '2022-07-20 14:11:12', '2022-07-20 14:11:12', 1, 1, 'draft', '', '10', '', '2022-07-20 00:00:00', NULL, '', '', '', 3, 0, '0', 0, 0, 0, '', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -220,6 +237,26 @@ CREATE TABLE `info_contents` (
   `option_value2` varchar(40) NOT NULL DEFAULT '',
   `option_value3` varchar(40) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- テーブルのデータのダンプ `info_contents`
+--
+
+INSERT INTO `info_contents` (`id`, `created`, `modified`, `info_id`, `block_type`, `position`, `title`, `content`, `image`, `image_pos`, `file`, `file_size`, `file_name`, `file_extension`, `section_sequence_id`, `option_value`, `option_value2`, `option_value3`) VALUES
+(1, '2022-07-19 14:58:47', '2022-07-19 14:58:47', 5, '18', 1, 'aaaaaaaaaaaaaaaaaaaaaaa', '', '', '', '', 0, '', '', 0, '', '', ''),
+(2, '2022-07-19 14:58:47', '2022-07-19 14:58:47', 5, '1', 2, 'bbbbbbbbbbbb', '', '', '', '', 0, '', '', 0, '', '', ''),
+(3, '2022-07-19 15:02:00', '2022-07-19 15:07:20', 6, '9', 1, '', '', '', '', '', 0, '', '', 0, '', '', ''),
+(4, '2022-07-19 15:22:38', '2022-07-19 15:22:38', 7, '18', 1, 'test h2', '', '', '', '', 0, '', '', 0, '', '', ''),
+(5, '2022-07-19 15:22:38', '2022-07-19 15:22:38', 7, '2', 2, '', '<p>test honbun</p>', '', '', '', 0, '', '', 0, '', '', ''),
+(6, '2022-07-19 15:22:38', '2022-07-19 15:22:38', 7, '1', 3, 'test h3', '', '', '', '', 0, '', '', 0, '', '', ''),
+(7, '2022-07-19 15:22:38', '2022-07-19 15:22:38', 7, '5', 4, 'test h4', '', '', '', '', 0, '', '', 0, '', '', ''),
+(8, '2022-07-19 15:31:56', '2022-07-19 15:33:13', 8, '2', 1, '', '<p><span style=\"color:rgb(0,0,0);\">KLab株式会社(本社:東京都港区、代表取締役社長:森田英克、以下「KLab」)は、Web3関連事業を管轄する子会社を設立し、ブロックチェーン関連事業に参入することをお知らせいたします。</span><br><span style=\"color:rgb(0,0,0);\">2022年3月開催の取締役会において「株式会社BLOCKSMITH&amp;Co.」(以下「BLOCKSMITH」)の設立を決議いたしました。代表取締役社長にはKLabの取締役会長ファウンダーである真田哲弥が就任いたします。</span><br>&nbsp;</p>', '', '', '', 0, '', '', 0, '', '', ''),
+(9, '2022-07-19 15:31:56', '2022-07-19 15:33:13', 8, '18', 2, 'ブロックチェーン関連事業子会社「株式会社BLOCKSMITH&Co.」設立のお知らせ', '', '', '', '', 0, '', '', 0, '', '', ''),
+(10, '2022-07-19 15:31:56', '2022-07-19 15:33:13', 8, '2', 3, '', '<p>&nbsp;</p><p><span style=\"color:rgb(0,0,0);\">産業史を振り返ると1980年代のPC、1990年代のインターネット、2010年代のSNSとクラウドなど、約10年周期でイノベーションが起こり、新たな産業と企業が勃興してきました。2020年代に入り、ブロックチェーン技術を活用したDeFiやNFT、或いはWeb3やメタバースなどサービスや概念が出現しました。私達は、ブロックチェーンこそがインターネット革命以来の新潮流だと考えています。</span></p>', '', '', '', 0, '', '', 0, '', '', ''),
+(11, '2022-07-19 15:31:56', '2022-07-19 15:33:13', 8, '1', 4, 'ブロックチェーンとトークンエコノミーによって実現（H3）', '', '', '', '', 0, '', '', 0, '', '', ''),
+(12, '2022-07-19 15:31:56', '2022-07-19 15:33:13', 8, '2', 5, '', '<p><span style=\"color:rgb(0,0,0);\">ゲーム産業においては、2010年代にモバイルというデバイスとFree to Playというビジネスモデルが新たなユーザーと新たな市場を開拓しゲーム産業の規模を拡大しましたが、今度はGameFiと呼ばれる新たなゲームモデルが再び新たなユーザーと新たなゲーム市場を開拓すると考えています。</span><br><span style=\"color:rgb(0,0,0);\">GameFiとは「Game+Finance をブロックチェーンとトークンエコノミーによって実現しようとする新しいゲームカテゴリー」、簡単に言うと「遊んで稼げるゲーム」です。</span></p>', '', '', '', 0, '', '', 0, '', '', ''),
+(13, '2022-07-19 15:31:56', '2022-07-19 15:33:13', 8, '5', 6, '背景（H4）', '', '', '', '', 0, '', '', 0, '', '', ''),
+(14, '2022-07-19 15:31:56', '2022-07-19 15:33:13', 8, '2', 7, '', '<p><span style=\"color:rgb(0,0,0);\">産業史を振り返ると1980年代のPC、1990年代のインターネット、2010年代のSNSとクラウドなど、約10年周期でイノベーションが起こり、新たな産業と企業が勃興してきました。2020年代に入り、ブロックチェーン技術を活用したDeFiやNFT、或いはWeb3やメタバースなどサービスや概念が出現しました。私達は、ブロックチェーンこそがインターネット革命以来の新潮流だと考えています。</span></p>', '', '', '', 0, '', '', 0, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -327,6 +364,13 @@ CREATE TABLE `page_configs` (
   `detail_url` varchar(100) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- テーブルのデータのダンプ `page_configs`
+--
+
+INSERT INTO `page_configs` (`id`, `created`, `modified`, `site_config_id`, `position`, `page_title`, `slug`, `header`, `footer`, `editable_role`, `deletable_role`, `addable_role`, `is_public_date`, `is_public_time`, `page_template_id`, `description`, `keywords`, `need_infotops`, `is_category`, `category_name_1`, `category_name_2`, `category_name_3`, `category_is_need_identifier_1`, `category_is_need_identifier_2`, `category_is_need_identifier_3`, `is_category_sort`, `is_category_multiple`, `is_category_multilevel`, `need_all_category_select`, `category_editable_role`, `max_multilevel`, `before_save_callback`, `after_save_callback`, `after_enable_callback`, `ad_find_order_callback`, `disable_position_order`, `disable_preview`, `list_style`, `root_dir_type`, `link_color`, `index_url`, `detail_url`) VALUES
+(1, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 1, '新着情報', 'news', '', '', 'demo', 'demo', 'demo', '0', '0', 0, '', '', 0, 'N', 'カテゴリー', 'カテゴリー', 'カテゴリー', 0, 0, 0, 'N', '0', '0', 0, 'staff', 0, '', '', '', '', '0', '0', '1', '0', '#000000', '', '');
+
 -- --------------------------------------------------------
 
 --
@@ -367,6 +411,46 @@ CREATE TABLE `page_config_items` (
   `editable_role` varchar(100) NOT NULL DEFAULT 'staff',
   `viewable_role` varchar(100) NOT NULL DEFAULT 'staff'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- テーブルのデータのダンプ `page_config_items`
+--
+
+INSERT INTO `page_config_items` (`id`, `created`, `modified`, `page_config_id`, `position`, `parts_type`, `item_key`, `status`, `memo`, `title`, `sub_title`, `editable_role`, `viewable_role`) VALUES
+(1, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 1, 'main', 'date', 'Y', '', '', '', 'staff', 'staff'),
+(2, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 2, 'main', 'slug', 'N', '', '', '', 'staff', 'staff'),
+(3, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 3, 'main', 'category', 'N', '', '', '', 'staff', 'staff'),
+(4, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 4, 'main', 'title', 'Y', '', '', '', 'staff', 'staff'),
+(5, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 5, 'main', 'notes', 'N', '', '', '', 'staff', 'staff'),
+(6, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 6, 'main', 'image', 'N', '', '', '', 'staff', 'staff'),
+(7, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 7, 'main', 'image_title', 'N', '', '', '', 'staff', 'staff'),
+(8, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 8, 'main', 'view_table_content', 'N', '', '', '', 'staff', 'staff'),
+(9, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 9, 'main', 'top_info', 'N', '', '', '', 'staff', 'staff'),
+(10, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 10, 'main', 'index_type', 'N', '', '', '', 'staff', 'staff'),
+(11, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 11, 'main', 'hash_tag', 'N', '', '', '', 'staff', 'staff'),
+(12, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 12, 'main', 'meta', 'N', '', '', '', 'staff', 'staff'),
+(13, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 13, 'main', 'status', 'Y', '', '', '', 'staff', 'staff'),
+(14, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 14, 'block', 'all', 'Y', '', '', '', 'staff', 'staff'),
+(15, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 16, 'block', 'title_h2', 'Y', '', '', '', 'staff', 'staff'),
+(16, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 15, 'block', 'title', 'Y', '', '', '', 'staff', 'staff'),
+(17, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 17, 'block', 'title_h4', 'Y', '', '', '', 'staff', 'staff'),
+(18, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 18, 'block', 'title_h5', 'Y', '', '', '', 'staff', 'staff'),
+(19, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 19, 'block', 'content', 'Y', '', '', '', 'staff', 'staff'),
+(20, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 20, 'block', 'wysiwyg_old', 'N', '', '', '', 'staff', 'staff'),
+(21, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 21, 'block', 'image', 'N', '', '', '', 'staff', 'staff'),
+(22, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 22, 'block', 'file', 'N', '', '', '', 'staff', 'staff'),
+(23, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 23, 'block', 'button', 'Y', '', '', '', 'staff', 'staff'),
+(24, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 24, 'block', 'button2', 'Y', '', '', '', 'staff', 'staff'),
+(25, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 25, 'block', 'line', 'Y', '', '', '', 'staff', 'staff'),
+(26, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 26, 'block', 'with_image', 'N', '', '', '', 'staff', 'staff'),
+(27, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 27, 'block', 'dialogue', 'N', '', '', '', 'staff', 'staff'),
+(28, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 28, 'block', 'information', 'N', '', '', '', 'staff', 'staff'),
+(29, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 29, 'section', 'all', 'N', '', '', '', 'staff', 'staff'),
+(30, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 30, 'section', 'section_relation', 'N', '', '', '', 'staff', 'staff'),
+(31, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 31, 'section', 'section', 'N', '', '', '', 'staff', 'staff'),
+(32, '2022-07-19 13:08:34', '2022-07-19 13:08:34', 1, 32, 'section', 'section_file', 'N', '', '', '', 'staff', 'staff'),
+(33, '2022-07-19 13:13:11', '2022-07-19 13:13:11', 1, 33, 'main', 'date', 'Y', '', '', '', 'staff', 'staff'),
+(34, '2022-07-19 13:14:01', '2022-07-19 13:14:01', 1, 34, 'main', 'date', 'Y', '', '', '', 'staff', 'staff');
 
 -- --------------------------------------------------------
 
@@ -473,6 +557,19 @@ CREATE TABLE `redactor_images` (
 -- --------------------------------------------------------
 
 --
+-- テーブルの構造 `schedules`
+--
+
+CREATE TABLE `schedules` (
+  `id` int(11) NOT NULL,
+  `info_id` int(11) NOT NULL,
+  `start` datetime NOT NULL,
+  `end` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- テーブルの構造 `section_sequences`
 --
 
@@ -506,7 +603,7 @@ CREATE TABLE `site_configs` (
 --
 
 INSERT INTO `site_configs` (`id`, `created`, `modified`, `position`, `status`, `site_name`, `slug`, `is_root`, `page_editable_role`) VALUES
-(1, '2022-01-06 16:09:24', '2022-01-06 16:09:24', 1, 'publish', 'D2dotBlockSmithｺｰﾎﾟﾚｰﾄｻｲﾄ', '', '1', 'develop');
+(1, '2022-01-06 16:09:24', '2022-01-06 16:09:24', 1, 'publish', 'BLOCKSMITH&Co.', '', '1', 'develop');
 
 -- --------------------------------------------------------
 
@@ -552,7 +649,7 @@ CREATE TABLE `useradmins` (
 INSERT INTO `useradmins` (`id`, `created`, `modified`, `email`, `username`, `password`, `temp_password`, `temp_pass_expired`, `temp_key`, `name`, `status`, `role`) VALUES
 (1, '2022-01-06 16:11:10', '2022-01-19 10:55:17', '', 'develop', '', 'caters040917', '0000-00-00 00:00:00', '', '開発者', 'publish', 0),
 (2, '2022-01-06 16:11:10', '2022-01-19 10:55:17', '', 'caters_admin', 'caterscaters', 'caterscaters', '0000-00-00 00:00:00', '', '管理者', 'publish', 1),
-(3, '2022-01-06 16:11:10', '2022-01-19 10:55:17', '', 'user_name', 'user_name', 'user_name', '0000-00-00 00:00:00', '', 'ユーザー', 'publish', 11),
+(3, '2022-01-06 16:11:10', '2022-01-19 10:55:17', '', 'admin', 'admin1#', 'admin1#', '0000-00-00 00:00:00', '', 'ユーザー', 'publish', 11),
 (4, '2022-01-06 16:11:10', '2022-01-19 10:55:17', '', 'admin', 'g05kHonV', 'g05kHonV', '0000-00-00 00:00:00', '', '管理者', 'publish', 1);
 
 -- --------------------------------------------------------
@@ -702,6 +799,12 @@ ALTER TABLE `redactor_images`
   ADD PRIMARY KEY (`id`);
 
 --
+-- テーブルのインデックス `schedules`
+--
+ALTER TABLE `schedules`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- テーブルのインデックス `section_sequences`
 --
 ALTER TABLE `section_sequences`
@@ -763,7 +866,7 @@ ALTER TABLE `contacts`
 -- テーブルの AUTO_INCREMENT `infos`
 --
 ALTER TABLE `infos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- テーブルの AUTO_INCREMENT `info_append_items`
@@ -781,7 +884,7 @@ ALTER TABLE `info_categories`
 -- テーブルの AUTO_INCREMENT `info_contents`
 --
 ALTER TABLE `info_contents`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- テーブルの AUTO_INCREMENT `info_tags`
@@ -805,7 +908,7 @@ ALTER TABLE `mst_lists`
 -- テーブルの AUTO_INCREMENT `page_configs`
 --
 ALTER TABLE `page_configs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- テーブルの AUTO_INCREMENT `page_config_extensions`
@@ -817,7 +920,7 @@ ALTER TABLE `page_config_extensions`
 -- テーブルの AUTO_INCREMENT `page_config_items`
 --
 ALTER TABLE `page_config_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- テーブルの AUTO_INCREMENT `page_templates`
@@ -847,6 +950,12 @@ ALTER TABLE `preview_info_tags`
 -- テーブルの AUTO_INCREMENT `redactor_images`
 --
 ALTER TABLE `redactor_images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- テーブルの AUTO_INCREMENT `schedules`
+--
+ALTER TABLE `schedules`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
