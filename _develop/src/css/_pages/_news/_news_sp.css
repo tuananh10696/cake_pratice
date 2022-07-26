@@ -1,0 +1,109 @@
+@media (--sp) {
+  .news-list {
+    width: 100%;
+    height: auto;
+    padding: 0 0 vw(120);
+  }
+  .news-list__pager {
+    width: 100%;
+    height: auto;
+    padding: vw(56) 0 0;
+    .pager {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: vw(20);
+    }
+    .pager__page {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: vw(60);
+      height: vw(60);
+      background-color: $col_white;
+      border: 1px solid #f0f0f0;
+      border-radius: 50%;
+      box-shadow: 0 vw(5) vw(10) rgba(0, 0, 0, .05);
+      font-size: vw(26);
+      font-weight: 700;
+      transition: background-color .3s ease;
+      &:hover {
+        background-color: #f0f0f0;
+      }
+      &.current {
+        background-color: $col_text;
+        color: $col_white;
+        &:hover {
+          background-color: #666;
+        }
+      }
+    }
+  }
+  .news-detail {
+    width: 100%;
+    height: auto;
+    padding: vw(200) 0 vw(160);
+  }
+  .news-detail__content {
+    width: 100%;
+    height: auto;
+  }
+  .content__head {
+    width: 100%;
+    height: auto;
+    padding: 0 0 vw(56);
+    .date {
+      display: block;
+      font-size: vw(24);
+      font-weight: 700;
+      padding: 0 0 vw(16);
+    }
+    .label {
+      line-height: 1.5;
+      font-weight: 400;
+      font-size: vw(40);
+    }
+  }
+  .content__detail-pager {
+    width: 100%;
+    height: auto;
+    padding: vw(80) 0 0;
+    .detail-pager {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: vw(40);
+      .btn {
+        background-color: $col_text;
+        color: $col_white;
+        border-radius: 50%;
+        width: vw(72);
+        height: vw(72);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 vw(5) vw(10) rgba(0, 0, 0, .05);
+        transition: background-color .3s ease;
+        &:hover {
+          background-color: #666;
+        }
+      }
+      .list-link {
+        background-color: $col_white;
+        border-radius: vw(100);
+        border: 1px solid #f0f0f0;
+        box-shadow: 0 vw(5) vw(10) rgba(0, 0, 0, .05);
+        padding: .9em vw(96) 1.1em;
+        transition: background-color .3s ease;
+        &:hover {
+          background-color: #f0f0f0;
+        }
+        .icon {
+          font-size: vw(16);
+          margin-right: vw(24);
+        }
+      }
+    }
+  }
+
+}

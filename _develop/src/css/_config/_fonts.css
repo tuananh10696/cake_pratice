@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "glyphs";
+  src: url('../fonts/glyphs.eot?t=1657779202592'); /* IE9*/
+  src: url('../fonts/glyphs.eot?t=1657779202592#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url("../fonts/glyphs.woff2?t=1657779202592") format("woff2"),
+  url("../fonts/glyphs.woff?t=1657779202592") format("woff"),
+  url('../fonts/glyphs.ttf?t=1657779202592') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../fonts/glyphs.svg?t=1657779202592#glyphs') format('svg'); /* iOS 4.1- */
+}
+
+[class^="glyphs-"], [class*=" glyphs-"] {
+  font-family: 'glyphs' !important;
+  font-size:1em;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.glyphs-icon_arrow-l:before { content: "\ea01"; }
+.glyphs-icon_arrow-r:before { content: "\ea02"; }
+.glyphs-icon_arrow-t:before { content: "\ea03"; }
+.glyphs-icon_blank:before { content: "\ea04"; }
+.glyphs-icon_list:before { content: "\ea05"; }
+.glyphs-icon_tw:before { content: "\ea06"; }

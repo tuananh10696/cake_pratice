@@ -1,0 +1,50 @@
+extends ../utils/_base.pug
+
+block append stylesheet
+  //- assetPathで自動でサブディレクトリ対応の/assets/のパスが出るようにしてあります。
+  link(rel="stylesheet", href=assetPath + 'css/news.css')
+
+block subTitle
+  - var pageTitle = 'お知らせ';
+
+block main
+  .news-detail
+    .news-detail__inner.cmn__lower-inner
+      .news-detail__content
+        .content__head
+          time(datetime="2022-03-24").date 2022 3/24
+          h1.label ブロックチェーン関連事業子会社「株式会社BLOCKSMITH&amp;Co.」設立のお知らせ
+        .content__body
+          .wysiwyg
+            p KLab株式会社(本社:東京都港区、代表取締役社長:森田英克、以下「KLab」)は、Web3関連事業を管轄する子会社を設立し、ブロックチェーン関連事業に参入することをお知らせいたします。
+              br
+              | 2022年3月開催の取締役会において「株式会社BLOCKSMITH&Co.」(以下「BLOCKSMITH」)の設立を決議いたしました。代表取締役社長にはKLabの取締役会長ファウンダーである真田哲弥が就任いたします。
+              br
+              br
+              br
+            h2: span 遊んで稼げるゲーム（H2）
+            p 産業史を振り返ると1980年代のPC、1990年代のインターネット、2010年代のSNSとクラウドなど、約10年周期でイノベーションが起こり、新たな産業と企業が勃興してきました。2020年代に入り、ブロックチェーン技術を活用したDeFiやNFT、或いはWeb3やメタバースなどサービスや概念が出現しました。私達は、ブロックチェーンこそがインターネット革命以来の新潮流だと考えています。
+              br
+              br
+            h3 ブロックチェーンとトークンエコノミーによって実現（H3）
+            p ゲーム産業においては、2010年代にモバイルというデバイスとFree to Playというビジネスモデルが新たなユーザーと新たな市場を開拓しゲーム産業の規模を拡大しましたが、今度はGameFiと呼ばれる新たなゲームモデルが再び新たなユーザーと新たなゲーム市場を開拓すると考えています。
+              br
+              | GameFiとは「Game+Finance をブロックチェーンとトークンエコノミーによって実現しようとする新しいゲームカテゴリー」、簡単に言うと「遊んで稼げるゲーム」です。
+              br
+              br
+            h4 背景（H4）
+            p 産業史を振り返ると1980年代のPC、1990年代のインターネット、2010年代のSNSとクラウドなど、約10年周期でイノベーションが起こり、新たな産業と企業が勃興してきました。2020年代に入り、ブロックチェーン技術を活用したDeFiやNFT、或いはWeb3やメタバースなどサービスや概念が出現しました。私達は、ブロックチェーンこそがインターネット革命以来の新潮流だと考えています。
+              br
+              br
+              | ゲーム産業においては、2010年代にモバイルというデバイスとFree to Playというビジネスモデルが新たなユーザーと新たな市場を開拓しゲーム産業の規模を拡大しましたが、今度はGameFiと呼ばれる新たなゲームモデルが再び新たなユーザーと新たなゲーム市場を開拓すると考えています。
+              br
+              | GameFiとは「Game+Finance をブロックチェーンとトークンエコノミーによって実現しようとする新しいゲームカテゴリー」、簡単に言うと「遊んで稼げるゲーム」です。
+          .content__detail-pager
+            .detail-pager
+              a(href="#", aria-label="ひとつ前の記事を見る").btn.prev-btn
+                i.glyphs-icon_arrow-l.icon
+              a(href="/news/").list-link
+                i.glyphs-icon_list.icon
+                | NEWS一覧
+              a(href="#", aria-label="次の記事を見る").btn.next-btn
+                i.glyphs-icon_arrow-r.icon

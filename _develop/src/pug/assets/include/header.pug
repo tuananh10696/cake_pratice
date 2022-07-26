@@ -1,0 +1,27 @@
+include ../../utils/_variable.pug
+include ../../utils/_mixin.pug
+
+block append mixin
+  mixin navItem(link, textImg, alt)
+    li.header__nav-item&attributes(attributes)
+      a(href=link).header__nav-link.link__text
+        .txt-img-wrap
+          +img(textImg, alt)
+
+header.header#header
+  .header__inner.cmn__inner
+    .header__logo
+      a(href="/").link__alpha
+        +img('images/common/logo.svg', 'BLOCKSMITH&Co.')
+    button(type="button", aria-label="メニューを開く").header__menu-btn.show_sp.js-headerBtn
+      span.bar
+      span.bar
+    nav.header__nav.js-headerNav
+      .header__nav-inner
+        ul.header__nav-list
+          +navItem('/#news', 'images/text/header_news.svg', 'News')
+          //- +navItem('/#message', 'images/text/header_message.svg', 'Message')
+          +navItem('/#service', 'images/text/header_service.svg', 'Service')
+          +navItem('/#recruit', 'images/text/header_recruit.svg', 'Recruit')
+          +navItem('/#company', 'images/text/header_company.svg', 'Company')
+          +navItem('/contact/', 'images/text/header_contact.svg', 'Contact').header__nav-item--contact

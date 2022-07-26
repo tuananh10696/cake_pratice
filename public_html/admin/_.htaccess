@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Input your ID and Password."
+AuthUserFile /home/cms-v5/public_html/.htpasswd
+require valid-user

@@ -1,0 +1,30 @@
+extends ../utils/_base.pug
+
+block append stylesheet
+  //- assetPathで自動でサブディレクトリ対応の/assets/のパスが出るようにしてあります。
+  link(rel="stylesheet", href=assetPath + 'css/news.css')
+
+block subTitle
+  - var pageTitle = 'お知らせ';
+
+block main
+  +lowerHead('images/text/news.svg','NEWS')
+  .news-list
+    .news-list__inner.cmn__lower-inner
+      .news-list__container
+        ul.news-list__list
+          +newsItem('./detail.html', '2022-07-06', '2022 7/6', 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。')
+          +newsItem('./detail.html', '2022-07-06', '2022 7/6', 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。')
+          +newsItem('./detail.html', '2022-03-24', '2022 3/24', 'ブロックチェーン関連事業子会社「株式会社BLOCKSMITH&Co.」設立のお知らせ')
+          +newsItem('./detail.html', '2022-07-06', '2022 7/6', 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。')
+          +newsItem('./detail.html', '2022-07-06', '2022 7/6', 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。')
+          +newsItem('./detail.html', '2022-07-06', '2022 7/6', '株式会社BLOCKSMITH&Co.がブロックチェーンゲームの最新型「学んで稼げる Learn to Earn」を発表〜今秋にプレセールを実施〜')
+          +newsItem('./detail.html', '2022-04-26', '2022 4/26', 'KLabの戦略子会社BLOCKSMITH&Co.が、ThirdverseグループとWeb3及びブロックチェーンゲームの開発・運営に関する基本合意契約を締結')
+          +newsItem('./detail.html', '2022-03-24', '2022 3/24', 'ブロックチェーン関連事業子会社「株式会社BLOCKSMITH&Co.」設立のお知らせ')
+        .news-list__pager
+          .pager
+            a(href="").pager__page.current 1
+            a(href="").pager__page 2
+            a(href="").pager__page 3
+            a(href="").pager__page 4
+            a(href="").pager__page.omit …

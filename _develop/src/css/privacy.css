@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+@import './_config/_variables.css';
+@import './_config/_mixin.css';
+@import './_config/_media.css';
+
+
+@import './_modules/_css_inc/_datalist_pc.css';
+@import './_modules/_css_inc/_datalist_tb.css';
+@import './_modules/_css_inc/_datalist_sp.css';
+
+
+@import './_pages/_privacy/_privacy_pc.css';
+@import './_pages/_privacy/_privacy_tb.css';
+@import './_pages/_privacy/_privacy_sp.css';

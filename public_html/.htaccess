@@ -1,0 +1,31 @@
+DirectoryIndex index.php index.html index.cgi index.shtml
+AddOutputFilter INCLUDES .html .php
+Options +Includes
+AddHandler server-parsed .html
+
+RewriteEngine On
+RewriteBase /
+
+#Cakephp
+RewriteCond %{REQUEST_URI} !\.(gif|png|jpg|jpeg|js|css|ico)$ [NC]
+#RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}/index.html !-f
+RewriteCond %{REQUEST_FILENAME}/index.php !-f
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index_cake.php [QSA,L]
+
+## urlに含まれていたらBasic認証を省略する
+#SetEnvIf HOST "^.*(caters|test).*$" NO_AUTH
+#Order Deny,Allow
+#Allow from env=NO_AUTH
+#Satisfy Any
+
+## urlに含まれていたらBasic認証をかける。(caters|testはvirtualhostで用意済み)
+#SetEnvIf HOST "^.*(testtest2|testtest3).*$" NO_AUTH
+#Order Deny,Allow
+#Deny from env=NO_AUTH
+#AuthType Basic
+#AuthName "Input your ID and Password."
+#AuthUserFile /home/caters/public_html/.htpasswd
+#require valid-user
+#Satisfy Any

@@ -1,0 +1,27 @@
+extends ../utils/_base.pug
+
+block append stylesheet
+  //- assetPathで自動でサブディレクトリ対応の/assets/のパスが出るようにしてあります。
+  link(rel="stylesheet", href=assetPath + 'css/news.css')
+
+block subTitle
+  - var pageTitle = 'お知らせ';
+
+block main
+  .news-detail
+    .news-detail__inner.cmn__lower-inner
+      .news-detail__content
+        .content__head
+          time(datetime="2022-03-24").date 2022 3/24
+          h1.label ブロックチェーン関連事業子会社「株式会社BLOCKSMITH&amp;Co.」設立のお知らせ
+        .content__body
+          include ./_wysiwyg.pug
+          .content__detail-pager
+            .detail-pager
+              a(href="#", aria-label="ひとつ前の記事を見る").btn.prev-btn
+                i.glyphs-icon_arrow-l.icon
+              a(href="/news/").list-link
+                i.glyphs-icon_list.icon
+                | NEWS一覧
+              a(href="#", aria-label="次の記事を見る").btn.next-btn
+                i.glyphs-icon_arrow-r.icon

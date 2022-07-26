@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "html-validate:recommended"
+  ],
+  "elements" : [
+    "html5"
+  ],
+  "rules": {
+    "empty-heading": "off",
+    "close-order": "error",
+    "close-attr": "error",
+    "no-dup-id": "error",
+    "prefer-tbody": "error",
+    "no-raw-characters": "off",
+    "no-implicit-close": "off",
+    "no-inline-style": "off",
+    "void": "off",
+    "void-style": "off",
+    "no-trailing-whitespace": "off",
+    "svg-focusable": "off",
+    "script-type" : "warn",
+    "no-deprecated-attr" : "warn"
+
+  }
+}

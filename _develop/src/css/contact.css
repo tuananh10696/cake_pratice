@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+@import './_config/_variables.css';
+@import './_config/_mixin.css';
+@import './_config/_media.css';
+
+@import './_pages/_contact/_contact_pc.css';
+@import './_pages/_contact/_contact_tb.css';
+@import './_pages/_contact/_contact_sp.css';

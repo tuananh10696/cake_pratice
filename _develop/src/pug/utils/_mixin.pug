@@ -1,0 +1,45 @@
+block mixin
+  mixin pic(pc, sp, alt='')
+    picture
+      source(media='(min-width: 769px)', srcset=assetPath+pc)
+      source(media='(max-width: 768px)', srcset=assetPath+sp)
+      img(src=assetPath+sp, srcset=assetPath+sp, alt=alt, class=attributes.class)
+
+
+  //-  width / height自動入力版画像タグ<img>。
+  //-  imagesからでいいです。例) +img('images/utils/logo.png');
+  mixin img(src, alt='')
+    -
+      const targetSrc = `${ src }`
+      let targetPath = targetSrc
+        .replace(/["']/g, '')
+        .replace(/\.\.\//g, '')
+        .replace(/^\//i, '');
+      targetPath = nodePath.resolve(nodeDest, `${ process.env.npm_package_config_assetPath }/`, targetPath);
+
+      let isError = false;
+      let dimensions = null;
+      try {
+        let file = nodeFs.readFileSync(targetPath);
+      } catch(e) {
+        isError = true;
+      }
+      if (!isError) {
+        dimensions = nodeSize(targetPath);
+      }
+    if dimensions
+      img(src=assetPath + targetSrc, alt=alt, width=dimensions.width, height=dimensions.height,loading="lazy", decoding="async", class=attributes.class)
+    else
+      img(src=assetPath + targetSrc, alt=alt, class=attributes.class)
+
+  mixin lowerHead(ttlImg, alt)
+    .cmn__lower-head.lower-head
+      h1.lower-head__ttl
+        span.txt-img-wrap
+          +img(ttlImg, alt)
+
+  mixin newsItem(link, datetime, dateLabel, label, clamp=false)
+    li.cmn__news-item.intersect-elem(data-effect="fadeup", class=`${clamp ? 'cmn__news-item--clamp' : ''}`)
+      a(href=link)
+        time(datetime=datetime).date !{dateLabel}
+        p.label !{label}

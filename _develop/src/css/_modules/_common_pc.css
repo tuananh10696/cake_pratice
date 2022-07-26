@@ -1,0 +1,249 @@
+@media (--pc) {
+  body {
+    font-size: rem(16);
+    line-height: 2.0;
+    letter-spacing: .05em;
+  }
+  .show_sp {
+    display: none !important;
+  }
+  .txt-img-wrap {
+    img {
+      display: block;
+      width: auto;
+      height: 100%;
+    }
+  }
+  .cmn__inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  .cmn__lower-inner {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+  }
+  .cmn__ttl {
+    padding-bottom: 36px;
+    .txt-img-wrap {
+      display: inline-block;
+      width: auto;
+      height: 41px;
+      padding-bottom: 8px;
+      border-bottom: 3px solid currentColor;
+    }
+  }
+  .cmn__catch {
+    font-size: rem(26);
+    padding: 0 0 24px;
+    line-height: 1.5;
+  }
+  .cmn__lower-head {
+    width: 100%;
+    height: auto;
+    padding: 216px 0 112px;
+    .lower-head__ttl {
+      .txt-img-wrap {
+        --hei-text: 40px;
+        --padding-bottom: 12px;
+        display: block;
+        width: max-content;
+        height: calc(var(--hei-text) + var(--padding-bottom) + 3px);
+        margin: auto;
+        padding: 0 0 var(--padding-bottom);
+        border-bottom: 3px solid currentColor;
+      }
+    }
+  }
+  .cmn__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: opacity .3s ease;
+    .icon-arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background-color: $col_text;
+      color: $col_white;
+      border-radius: 50%;
+      margin-right: 24px;
+      margin-bottom: -2px;
+      transition: background-color .3s ease, transform .3s ease;
+    }
+    &:hover {
+      opacity: .8;
+      .icon-arrow {
+        background-color: $col_text-gray;
+        transform: translateX(6px);
+      }
+    }
+  }
+  .cmn__news-item {
+    width: 100%;
+    height: auto;
+    &:not(:last-child) {
+      border-bottom: 1px solid $col_news-border-gray;
+    }
+    &--clamp {
+      .label {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-right: 1em;
+      }
+    }
+    a {
+      display: flex;
+      justify-content: flex-start;
+      padding: 1.0em 0 1.0em;
+      transition: opacity .3s ease, background-color .3s ease;
+      &:hover {
+        opacity: .6;
+      }
+    }
+    .date {
+      flex-shrink: 0;
+      display: block;
+      width: 112px;
+      font-weight: 700;
+    }
+    .label {
+      flex-shrink: 1;
+      width: 100%;
+      letter-spacing: .01em;
+    }
+    .icon-blank {
+      color: $col_text-gray;
+      font-size: rem(12);
+      margin-left: 12px;
+    }
+  }
+
+
+  .link {
+    /*
+      .link__alpha: 透明度アニメーション
+      a.link__text(href="#") リンク文字
+    */
+    &__alpha {
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+    /*
+      .link__color: 色アニメーション
+      a.link__text(href="#") リンク文字
+    */
+    &__color {
+      cursor: pointer;
+      transition: color 0.3s ease;
+      &:hover {
+        color: #fff;
+      }
+    }
+    /*
+      .link__text: 下線アニメーション
+      a.link__text(href="#") リンク文字
+    */
+    &__text {
+      cursor: pointer;
+      position: relative;
+      &:before {
+        content: '';
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: currentColor;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transform-origin: right center;
+        transform: scale(0, 1);
+        transition: transform 0.3s ease;
+      }
+      &:hover {
+        &:before {
+          transform-origin: left center;
+          transform: scale(1, 1);
+        }
+      }
+    }
+    /*
+      .link__line:複数行対応下線アニメーション
+      a.link__line(href="#")
+        | あいうえお
+        br
+        | かきくけこ
+    */
+    &__line {
+      padding-bottom: 0.25em;
+      background: linear-gradient(currentColor, currentColor) 0 100%/0 1px no-repeat;
+      transition: background 0.3s ease;
+      &:hover {
+        background-size: 100% 1px;
+      }
+    }
+    /*
+    .link__fill : 塗りつぶしアニメーション
+    width, height、色などは別途指定。
+
+    a.link__fill(href="#")
+      span リンク文字
+    */
+    &__fill {
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span {
+        position: relative;
+      }
+      &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: #000;
+        transform-origin: right center;
+        transform: scale(0, 1);
+        transition: transform 0.3s ease;
+      }
+      &:hover {
+        &:before {
+          transform-origin: left center;
+          transform: scale(1, 1);
+        }
+      }
+    }
+
+    /*
+      .link__zoom : anchor内に画像がある場合拡大。他のと重ねがけ出来る。
+      a.link__zoom(href="#")
+        figure
+          img(src="//placehold.jp/dcdcdc/ffffff/100x100.png", alt="dummy")
+    */
+    &__zoom {
+      figure {
+        overflow: hidden;
+      }
+      img {
+        transition: transform 0.4s ease;
+      }
+      &:hover {
+        img {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}

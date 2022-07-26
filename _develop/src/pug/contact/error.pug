@@ -1,0 +1,56 @@
+extends ../utils/_base.pug
+
+block append stylesheet
+  //- assetPathで自動でサブディレクトリ対応の/assets/のパスが出るようにしてあります。
+  link(rel="stylesheet", href=assetPath + 'css/form.css')
+  link(rel="stylesheet", href=assetPath + 'css/contact.css')
+
+block subTitle
+  - var pageTitle = 'お問い合わせ';
+
+block main
+  +lowerHead('images/text/contact.svg', 'CONTACT')
+  .contact
+    .contact__inner.cmn__lower-inner
+      p.contact__lead
+        | ご意見、お問合せにつきましては、下記入力フォームにご記載の上、送信ボタンをクリックしてください。
+      form(action="./confirm.html").contact__form.form
+        .form__row
+          label.form__label(for="name") お名前
+            span.required 必須
+          .form__body
+            input(type="text", name="name", id="name").error
+            span.error-txt エラーが入ります
+        .form__row
+          label.form__label(for="mail") メールアドレス
+            span.required 必須
+          .form__body
+            input(type="email", name="mail", id="mail").error
+            span.error-txt エラーが入ります
+        .form__row
+          p.form__label お問い合わせ種別
+            span.required 必須
+          .form__body.form__body--radio
+            input(type="radio", name="category", id="category01").error
+            label(for="category01") 当社に関するお問い合わせ
+            input(type="radio", name="category", id="category02").error
+            label(for="category02") 取材に関するお問い合わせ
+            input(type="radio", name="category", id="category03").error
+            label(for="category03") 採用に関するお問い合わせ
+            span.error-txt エラーが入ります
+        .form__row
+          label.form__label(for="detail") お問い合わせ内容
+            span.required 必須
+          .form__body
+            textarea(id="detail", name="detail", rows="16").error
+            span.error-txt エラーが入ります
+        .form__privacy-wrap
+          .form__privacy
+            input(type="checkbox", name="privacy", id="privacy").error
+            label(for="privacy")
+              a(href="/privacy", target='_blank', rel='noopener') プライバシーポリシー
+              | に同意する
+            span.error-txt エラーが入ります
+        .form__submit
+          button(type="submit").btn 内容を確認して送信
+            i.glyphs-icon_arrow-r.icon-arrow

@@ -1,0 +1,107 @@
+@media (--pc) {
+  .news-list {
+    width: 100%;
+    height: auto;
+    padding: 0 0 80px;
+  }
+  .news-list__pager {
+    width: 100%;
+    height: auto;
+    padding: 56px 0 0;
+    .pager {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .pager__page {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: $col_white;
+      border: 1px solid #f0f0f0;
+      border-radius: 50%;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, .05);
+      font-size: rem(16);
+      font-weight: 700;
+      transition: background-color .3s ease;
+      &:hover {
+        background-color: #f0f0f0;
+      }
+      &.current {
+        background-color: $col_text;
+        color: $col_white;
+        &:hover {
+          background-color: #666;
+        }
+      }
+    }
+  }
+  .news-detail {
+    width: 100%;
+    height: auto;
+    padding: 200px 0 104px;
+  }
+  .news-detail__content {
+    width: 100%;
+    height: auto;
+  }
+  .content__head {
+    width: 100%;
+    height: auto;
+    padding: 0 0 56px;
+    .date {
+      display: block;
+      font-size: rem(16);
+      font-weight: 700;
+      padding: 0 0 16px;
+    }
+    .label {
+      line-height: 1.5;
+      font-weight: 400;
+    }
+  }
+  .content__detail-pager {
+    width: 100%;
+    height: auto;
+    padding: 104px 0 0;
+    .detail-pager {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 44px;
+      .btn {
+        background-color: $col_text;
+        color: $col_white;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, .05);
+        transition: background-color .3s ease;
+        &:hover {
+          background-color: #666;
+        }
+      }
+      .list-link {
+        background-color: $col_white;
+        border-radius: 100px;
+        border: 1px solid #f0f0f0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, .05);
+        padding: .9em 64px 1.1em;
+        transition: background-color .3s ease;
+        &:hover {
+          background-color: #f0f0f0;
+        }
+        .icon {
+          font-size: rem(14);
+          margin-right: 16px;
+        }
+      }
+    }
+  }
+}

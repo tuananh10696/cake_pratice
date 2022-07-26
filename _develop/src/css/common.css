@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+@import './_config/_variables.css';
+@import './_config/_mixin.css';
+@import './_config/_media.css';
+
+/* 下記はcommonだけで良い */
+@import './_config/_fonts.css';
+@import './_config/_reset.css';
+
+/* Tablet対応は、readmeのCSSの項目参照。*_pc.cssを作ると自動でtb版が作られる */
+/* pc<-->spだけにしたい場合は命名を別にしてください */
+
+@import './_modules/_common_pc.css';
+@import './_modules/_common_tb.css';
+@import './_modules/_common_sp.css';
+
+@import './_modules/_header_pc.css';
+@import './_modules/_header_tb.css';
+@import './_modules/_header_sp.css';
+
+@import './_modules/_footer_pc.css';
+@import './_modules/_footer_tb.css';
+@import './_modules/_footer_sp.css';
+
+a, button {
+  color: currentColor;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 
+  "Noto Sans JP",
+  "Hiragino Kaku Gothic ProN",
+  "Hiragino Sans",
+  Meiryo,
+  sans-serif;
+  letter-spacing: .05em;
+  color: $col_text;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+img {
+  display: block;
+}
